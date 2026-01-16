@@ -321,3 +321,55 @@ for (let i = 0; i < strg.length; i++) {
     console.log (strg[i])
 }
 
+// Functions:
+console.log ("Functions")
+//  A Function is a block of code designed to perform a particular task
+// DRY - Dont Repeat Yourself
+
+// To create a function use the keyword "function", then type the name of the function followed by "()" for the parameters that you 
+// may use, and finally "{}"
+
+// This is a "Function Definition"
+function welcomePersonToFES(firstName, lastName) {
+    console.log (`Welcome to FES, ${firstName} ${lastName}`)
+}
+
+// This is how you call a function
+welcomePersonToFES("Lavelle" , "Ali");
+welcomePersonToFES("Tamale", "Anderson");
+welcomePersonToFES("Tanesha", "Hodge");
+
+// Within a function definition the "return keyword" exits the code any code that is writtin afterwards will not be used.
+function fn() {
+    return 5
+    console.log ("my function")
+}
+
+console.log(fn())
+// Example 2:
+function sumOfTwoNumbers (num1, num2) {
+    return num1 / num2
+}
+
+console.log(sumOfTwoNumbers(20, 10))
+
+// Create a function that converts Celsius to Fahrenheit
+// Celsius to Fahrenheit formula:
+//  F = C * 1.8 + 32
+
+// This is the first way to define a function:
+ function tempConvert (temp1celsius) {
+     return temp1celsius * 1.8 + 32
+ }
+
+
+// The second way of defineing a function is by making an "arrow"?... 
+// This is the syntax of writting an "arrow":
+// () => {} is the actual sytax of the "arrow"
+
+const tempConvert = (celsius) => {
+    return celsius * 1.8 + 32
+}
+
+console.log(tempConvert(0))
+
