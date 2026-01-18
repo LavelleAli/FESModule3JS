@@ -357,19 +357,312 @@ console.log(sumOfTwoNumbers(20, 10))
 // Celsius to Fahrenheit formula:
 //  F = C * 1.8 + 32
 
-// This is the first way to define a function:
+// This is the first way to define a function:9
  function tempConvert (temp1celsius) {
      return temp1celsius * 1.8 + 32
  }
 
 
-// The second way of defineing a function is by making an "arrow"?... 
+// The second way of defining a function is by making an "arrow"?... 
 // This is the syntax of writting an "arrow":
 // () => {} is the actual sytax of the "arrow"
 
-const tempConvert = (celsius) => {
+const tempConvert1 = (celsius) => {
     return celsius * 1.8 + 32
 }
 
-console.log(tempConvert(0))
+console.log(tempConvert1(0))
 
+
+// Arrays
+console.log ("Arrays")
+// Arrays are a Data structure that can hold multiple data values in one variable
+// Instead of having to use mutiple variables we can use arrays to store in one variable.
+// Example:
+let item1 = 20
+let item2 = 30
+let item3 = 40
+let item4 = 50
+let item5 = 100
+// To make an Array you need to put the square brackets 
+// Example:
+let arr = [20, 30 ,40 , 50 ,100,]
+// In order to access items in the array you type the name of the array followed by square brackets;
+// array elements are numbered starting from 0.
+
+// First element of the array:
+console.log (arr[0])
+
+// Last element of the array:
+console.log (arr[arr.length -1])
+// you can access the last element of an array by using .length followed by -1 inside of the square brackets.
+
+// To add elements in an array when you use the .push method
+// Example:
+
+// Add element onto end of array.
+arr.push(200)
+
+console.log(arr);
+
+// The Array .filter Method
+// First you have to create a "Callback Function" ; The syntax is () => {}
+// Example:
+
+// let newArr = arr.filter((element) => {
+//     console.log ()
+//     if (element < 50) {
+//         return true
+//     }
+// })
+
+// Note: The .filter returns a new array
+// If we want to filter certain elements we can use the "if else" statements as in the above example.
+
+// This is the shorter way to do the same thing:
+// Example:
+
+// let newArr = arr.filter (element => {
+//     return element < 50
+// })
+
+// Note: When using multiple variables it is neccessary to input the ")" after the "element" but when only using a singular
+// variable it is not neccessary.
+    
+    // This is an even shorter way to do the same thing:
+// Example:
+let newArr = arr.filter (element => element < 50 )
+
+console.log (newArr)
+
+// Exercise:
+// Filter out all the "Fail" elements in an array
+let arr1 = ["A+", "A", "FAIL"]
+let newArr1 = arr1.filter (arr1 => arr1 != "FAIL")
+console.log (newArr1)
+let arr2 = ["FAIL", "FAIL", "B"]
+let newArr2 = arr2.filter (arr2 => arr2 != "FAIL")
+console.log (newArr2)
+let arr3 = ["FAIL"]
+let newArr3 = arr3.filter(arr3 => arr3 != "FAIL")
+console.log (newArr3)
+
+// You can also loop over every element in the array:
+// Example:
+
+let grades = ["A+", "A", "FAIL"]
+
+for (let i = 0; i < grades.length; ++i) {
+    console.log (grades[i])
+}
+
+
+
+// Exercise 2:
+// Filter out all the "FAIL" elements in an array
+// without using the Array.filter method
+
+let grades1 = ["A+", "A", "FAIL"]
+let goodGrades = []
+
+for (let h = 0; h < grades1.length; ++h ) {
+   if (grades1[h] != "FAIL") {
+    goodGrades.push(grades1[h])
+   }
+    console.log(grades1[h])
+}
+console.log (goodGrades)
+// 
+let grades2 = ["FAIL", "FAIL", "B"]
+let goodGrades2 = []
+
+for (let j = 0; j < grades2.length; ++j) {
+    if (grades2[j] != "FAIL") {
+        goodGrades2.push(grades2[j])
+    }
+    console.log (grades2[j])
+}
+console.log(goodGrades2)
+// 
+let grades3 = ["FAIL"]
+let goodGrades3 = []
+
+for (let k = 0; k < grades3.length; ++k) {
+    if (grades3[k] != "FAIL") {
+        goodGrades3.push(grades3[k])
+    }
+    console.log(grades3[k])
+    }
+ console.log(goodGrades3)
+ 
+
+//  The .map Method
+console.log("The .map Method")
+
+let jrr = [1,4,9,16]
+// This is the long method:
+// 
+// let newJrr = jrr.map((element) => {
+//     console.log(element)
+//     return undefined;
+// })
+// console.log(newJrr)
+// 
+// This is the short method:
+let newJrr = jrr.map(element => undefined)
+
+console.log(newJrr)
+
+// Exercise 1:
+// This is the long way:
+let dllr = [1,5,10,3]
+let cents = dllr.map((element) => {
+    return element * 100
+
+})
+console.log(cents)
+
+// This is the short way:
+let dllr2 = [0,10,20]
+let cents2 = dllr2.map(conversion => conversion * 100)
+
+console.log (cents2)
+
+// Exercise 2:
+// Do the same thing without using the .map method
+console.log("This is without the .map method")
+
+let dllr3 = [1,5,10,3]
+let cents3 = []
+for (let b = 0; b < dllr3.length; ++b) {
+    // console.log(dllr3[b] * 100)
+  cents3.push(dllr3[b] * 100)
+}
+console.log(cents3)
+// 
+let dllr4 = [ 0,10,20]
+let cents4 = []
+
+for (let n = 0; n < dllr4.length; ++n){
+    // console.log(dllr4[n] * 100)
+    cents4.push(dllr4[n] * 100)
+}
+console.log(cents4)
+
+// Objects
+console.log ("Objects:")
+// Objects are used to store multiple properties in one variable
+let userFirstName = "Lavelle"
+let userLastName = "Ali"
+let userDiscordId = "Lavelle Ali#001"
+let userSubscriptionStatus = "VIP"
+
+// To define a Object you will use "{}".
+// To give the Object properties all you have to do is write the property name followed by a ":" then the value.
+//  In order to store more than one variable you need to seperate them by a ",".
+// Example:
+
+let user = {
+    username : "Lavelle" ,
+    email : "123abc@jmail.com",
+    subscriptionStatus: "VIP",
+    discordId : "Lavelle Ali #0001",
+    lessonsCompleted : [0, 1]
+}
+
+// If you want to access a property within an object all you have to do is write the object name followed by a "." .
+// Example:
+
+console.log(user.username);
+// If you wanted to get the individual index of a property within the object you would use 
+// square brackets after the property name. Note: indexies start from 0.
+
+console.log (user.username[0])
+console.log (user.subscriptionStatus)
+console.log (user.lessonsCompleted)
+console.log(user.lessonsCompleted.map(elem => elem * 2))
+
+// Arrays can also store objects.
+// Example:
+
+let users = [ 
+    {username : "Lavelle" ,
+    email : "Lavelle@jmail.com",
+    password : "test123",
+    subscriptionStatus: "VIP",
+    discordId : "Lavelle Ali #0001",
+    lessonsCompleted : [0, 1]
+},
+{username : "Bilal" ,
+    email : "bilal@jmail.com",
+    password : "bilal123",
+    subscriptionStatus: "VIP",
+    discordId : "bilal #0001",
+    lessonsCompleted : [0, 1, 2, 3]
+},
+{username : "Zen" ,
+    email : "zen@jmail.com",
+    password : "zen123",
+    subscriptionStatus: "VIP",
+    discordId : "Zen#0001",
+    lessonsCompleted : [0, 1, 2, 3]
+}
+]
+// To access the objects within an Array "[}" after the array name
+// Example:
+console.log(users[0])
+// To access properties within that object is "." followed by the property name.
+// Example:
+console.log (users[0].lessonsCompleted.map(elem => elem * 2))
+// 
+
+function login (email, password ) {
+    for (let i = 0; i < users.length; ++i) {
+        if (users[i].email === email) {
+            console.log (users[i]);
+            if (users[i].password === password) {
+                 console.log ("Log the user in - the details are correct")
+            }
+            else { 
+                console.log ("password is incorrect - try again")
+            }
+            return;
+        }
+    }
+    console.log("could not find an email that matches");
+}
+login("thisdoesnotexist@jmail.com", "wrong password");
+
+// Exercise 1:
+
+// Create a register function that accepts:
+// - username
+// - email
+// - password
+// - subscriptionStatus
+// - discordId
+// - lessonsCompleted
+// 
+// Inside your register function:
+//  1. Creae a user object
+//  2. Push this user object onto the "users" array
+
+let users1 = [{}]
+
+function register (newUser) {
+    users1.push(newUser)
+}
+
+
+register ({
+    username : "Lavelle",
+    email : "Lavelle@gmail.com",
+    password : "test123", 
+    subscriptionStaus1 : "VIP", 
+    discordId : "Lavelle#001",
+    lessonsCompleted1 : [0,1,2,3]
+});
+
+console.log(users1)
+
+// This was difficult... will have to review.
