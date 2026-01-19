@@ -666,3 +666,58 @@ register ({
 console.log(users1)
 
 // This was difficult... will have to review.
+
+
+// Document Object Model (DOM):
+console.log("Document Object Model (DOM):")
+// The DOM allows you to access and change the stylingh and content of elements on your website.
+
+// The first way of accessing an element:
+document.querySelector("#title");
+// The property that allows us to access an element is called "querySelector"; it is a method that accepts an argument.
+// In order to access the element in your "html" is similar to CSS, as shown in the above example "#title".
+// 
+// *****
+ console.log(document.querySelector("#title"));
+//  The result from this "console.log" is "null" and that is because within the html the script "app.js"
+// is loading before the html.
+// There are 2 ways of making the html load before the js.
+// One way is to use a "defer".***
+// The second way is to put your script tag all the way to the end of your body tag.
+
+// The second way of accessing an element:
+// Note: this only works if the element has an "id".
+// Example:
+console.log(document.getElementById('title'))
+// It is better practice to use the second method if you have an element with an Id.
+// If the element does not have an "Id" you use the querySelector.
+// Note: the querySelector also works with "class" but if you want to access a "class" you will need
+// to use a ".xxxx" instead of the "#xxxx".
+
+// Note: With the querySelector you can also access the element itself.
+// Example:
+console.log(document.querySelector('h1'))
+
+// We can also change the inner HTML.
+// Example:
+document.querySelector("#title").innerHTML = 'Frontend Simplified'
+// If you want to add to an element you use the "+=" operators 
+// Example:
+document.querySelector('#title').innerHTML += " Lavelle Ali"
+// Note: This adds to the element in the order that it is written in the js.
+
+// You can also change CSS by using the ".style" in the DOM followed by the property you want to change:
+// Example:
+// document.querySelector('#title').style.color = "blue"
+// You can also change the font size.
+document.querySelector('#title').style.fontSize = '20px'
+
+function changeTitleToRed () {
+document.querySelector('#title').style.color = 'red';
+console.log('clicked')
+}
+// Note: along with the ".innerHTML" and ".style" methods you can also use the ".classlist" method.
+function toggleDarkMode() {
+    document.querySelector('body').classList.toggle("dark-theme")
+}
+// Another method that we can use is the ".toggle" method; This gives you the option the switch between themes
